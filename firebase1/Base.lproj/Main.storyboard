@@ -1,24 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VDp-9M-yXb">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login-->
+        <scene sceneID="vZJ-Sr-i7b">
+            <objects>
+                <viewController id="N9M-nt-Lec" customClass="LoginViewController" customModule="firebase1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hl0-wH-uof">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayp-u5-NBO">
+                                <rect key="frame" x="72" y="199" width="230" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="90R-DF-pJY">
+                                <rect key="frame" x="72" y="241" width="230" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ext-2L-vPC">
+                                <rect key="frame" x="72" y="345" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign-In"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="N9M-nt-Lec" eventType="touchUpInside" id="twK-48-Dp4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAl-6O-K3X">
+                                <rect key="frame" x="72" y="383" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign-Up"/>
+                                <connections>
+                                    <segue destination="Ief-Yi-BRF" kind="show" id="0Om-FF-0PE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuD-r0-rFG">
+                                <rect key="frame" x="48" y="535" width="279" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SWF-JT-D6V"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Login" image="person" catalog="system" id="Qzt-xi-0aK"/>
+                    <connections>
+                        <outlet property="btnLogin" destination="ext-2L-vPC" id="TY7-TC-QPN"/>
+                        <outlet property="lblInfo" destination="yuD-r0-rFG" id="R7p-ld-0eV"/>
+                        <outlet property="tfEmail" destination="ayp-u5-NBO" id="8Hb-vA-yOi"/>
+                        <outlet property="tfPassword" destination="90R-DF-pJY" id="qf0-FB-f4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oee-T4-iwq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="895.50224887556226"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="8Mx-GL-YvB">
+            <objects>
+                <viewController id="Ief-Yi-BRF" customClass="RegisterViewController" customModule="firebase1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ldk-cx-YgF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이메일을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXJ-37-rYT">
+                                <rect key="frame" x="72" y="199" width="230" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVT-KL-MGe">
+                                <rect key="frame" x="72" y="241" width="230" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BU3-vi-OBo">
+                                <rect key="frame" x="72" y="345" width="230" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign-Up"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="N9M-nt-Lec" eventType="touchUpInside" id="XAa-66-6nF"/>
+                                    <action selector="btnRegi:" destination="Ief-Yi-BRF" eventType="touchUpInside" id="gdo-iQ-Rfs"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Je9-aG-HEO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Register" id="pol-h5-DbU"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="05C-CJ-z1c"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WuO-Q4-5ys"/>
+                    <connections>
+                        <outlet property="btnRegi" destination="BU3-vi-OBo" id="48i-hM-4KM"/>
+                        <outlet property="tfEmail" destination="YXJ-37-rYT" id="i6n-3R-o4q"/>
+                        <outlet property="tfPassword" destination="LVT-KL-MGe" id="BzS-dT-xJr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Egu-er-Yxx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="896"/>
+        </scene>
+        <!--DB-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="firebase1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DmY-Vm-C9n">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="Nmf-TP-LlF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nmf-TP-LlF" id="hWh-2A-aZQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yl9-9u-wUE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="A8I-do-ZnR"/>
+                                    <constraint firstAttribute="width" constant="375" id="tlt-ie-2PQ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="B8U-Aa-j3e"/>
+                                    <barButtonItem title="Add" image="plus" catalog="system" id="Tjz-Ft-pjq">
+                                        <connections>
+                                            <action selector="addTodo:" destination="BYZ-38-t0r" id="4Zb-YR-1gO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yl9-9u-wUE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4FC-R0-zED"/>
+                            <constraint firstItem="yl9-9u-wUE" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7Mc-0l-RJc"/>
+                            <constraint firstItem="DmY-Vm-C9n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="88B-P7-CUJ"/>
+                            <constraint firstItem="DmY-Vm-C9n" firstAttribute="top" secondItem="yl9-9u-wUE" secondAttribute="bottom" id="Bki-bO-HUo"/>
+                            <constraint firstItem="yl9-9u-wUE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZNL-IE-yb7"/>
+                            <constraint firstItem="DmY-Vm-C9n" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bxq-Bf-EjT"/>
+                            <constraint firstItem="DmY-Vm-C9n" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="g4v-KF-kgt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="DB" image="square.and.arrow.down.on.square.fill" catalog="system" id="mVe-6u-aVp"/>
+                    <connections>
+                        <outlet property="tableView" destination="DmY-Vm-C9n" id="Ymt-xc-Hxh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1025" y="143"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="PKI-MB-fLS">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VDp-9M-yXb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ygd-cJ-fYp">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="N9M-nt-Lec" kind="relationship" relationship="viewControllers" id="rjv-MN-m7P"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="O7v-6c-vmj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F4U-aY-EcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="402.54872563718146"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="square.and.arrow.down.on.square.fill" catalog="system" width="122" height="128"/>
+    </resources>
 </document>
